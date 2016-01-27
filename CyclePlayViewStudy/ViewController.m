@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "UIViewController+Frame.h"
+#import "CyclePlayView.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    CyclePlayView *loopView = [[CyclePlayView alloc] initWithFrame:CGRectMake(0, 0, self.screenWidth, 200)];
+    [loopView setImages:nil placeholderImages:@[@"img_01.png", @"img_02.png", @"img_03.png", @"img_04.png", @"img_05.png"]];
+    [self.view addSubview:loopView];
 }
 
 - (void)didReceiveMemoryWarning {
